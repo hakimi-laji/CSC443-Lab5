@@ -7,31 +7,31 @@
 			function add(){
 				var a = +document.getElementById("a").value;
 				var b = +document.getElementById("b").value;
-				document.write(a + " + " + b + " = " + (a+b));
+				document.getElementById("answer").innerHTML = a + " + " + b + " = " + (a+b);
 			}
 			
 			function sub(){
 				var a = +document.getElementById("a").value;
 				var b = +document.getElementById("b").value;
-				document.write(a + " - " + b + " = " + (a-b));
+				document.getElementById("answer").innerHTML = a + " - " + b + " = " + (a-b);
 			}
 			
 			function mul(){
 				var a = +document.getElementById("a").value;
 				var b = +document.getElementById("b").value;
-				document.write(a + " * " + b + " = " + (a*b));
+				document.getElementById("answer").innerHTML = a + " * " + b + " = " + (a*b);
 			}
 			
 			function div(){
 				var a = +document.getElementById("a").value;
 				var b = +document.getElementById("b").value;
-				document.write(a + " / " + b + " = " + (a/b));
+				document.getElementById("answer").innerHTML = a + " / " + b + " = " + (a/b);
 			}
 			
 			function mod(){
 				var a = +document.getElementById("a").value;
 				var b = +document.getElementById("b").value;
-				document.write(a + " % " + b + " = " + (a%b));
+				document.getElementById("answer").innerHTML = a + " % " + b + " = " + (a%b);
 			}
 			
 			function txt(){
@@ -40,15 +40,18 @@
 				var xage = document.getElementById("age").value;
 				var xgender = document.getElementById("gender").value;
 				var xstate = document.getElementById("state").value;
-				document.write("NAME: " + xname);
-				document.write("<br>PROGRAM: " + xprog);
-				document.write("<br>AGE: " + xage);
-				document.write("<br>GENDER: " + xgender);
-				document.write("<br>STATE: " + xstate);
+				document.getElementById("info1").innerHTML = "NAME: " + xname;
+				document.getElementById("info2").innerHTML = "PROGRAM: " + xprog;
+				document.getElementById("info3").innerHTML = "AGE: " + xage;
+				document.getElementById("info4").innerHTML = "GENDER: " + xgender;
+				document.getElementById("info5").innerHTML = "STATE: " + xstate;
+				document.getElementById("form").outerHTML = "";
+				window.alert("Student information recorded succesfully!");
+
 			}
 		</script>  
 		
-		
+		<div id="form">
 		<p>STUDENT FORM:</p>
 		Name: <input id="name" type="text" name="txtname" ><br><br>
 		Program: <input id="prog" type="text" name="txtprog" ><br><br>
@@ -79,6 +82,7 @@
 		
 		
 		<button type="button" onclick="txt()">Submit</button><br><br>
+		</div>
 		
 		<p>ONLINE CALCULATOR:</p>
 		Enter A: <input id="a" type="text" name="txt1" ><br>
@@ -89,6 +93,14 @@
 		<button type="button" onclick="div()">/</button>
 		<button type="button" onclick="mod()">%</button>
 		
+		<p><b>STUDENT INFORMATION</b>
+			<p id="info1"></p>
+			<p id="info2"></p>
+			<p id="info3"></p>
+			<p id="info4"></p>
+			<p id="info5"></p>
+		</p>
+		<p><b>CALCULATION ANSWER</b><p id="answer"></p></p>
 		
 	</body>
 </html>
